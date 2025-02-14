@@ -30,6 +30,7 @@ const Index = () => {
     const [data, setData] = useState([]);
     const [displaySearchData, setDisplaySearchData] = useState(false);
     const [searchedData, setSearchedData] = useState([]);
+    const [userAction, setUserAction] = useState("");
     const [permission] = HasAccess(['Meetings'])
     const dispatch = useDispatch()
 
@@ -158,7 +159,7 @@ const Index = () => {
                 setGetTagValues={setGetTagValuesOutside}
                 setSearchbox={setSearchboxOutside}
             />
-            <AddMeeting setAction={setAction} isOpen={isOpen} onClose={onClose} />
+            <AddMeeting setAction={setAction} fetchData={fetchData} userAction={userAction} isOpen={isOpen} onClose={onClose} />
 
             {/* Delete model */}
             <CommonDeleteModel isOpen={deleteMany} onClose={() => setDeleteMany(false)} type='Meetings' handleDeleteData={handleDeleteMeeting} ids={selectedValues} />
