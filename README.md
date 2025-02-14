@@ -106,8 +106,8 @@ PUBLIC_URL="http://localhost:3000/"
         }
     };
 
-    // First useEffect - Handle related field changes and data loading
-useEffect(() => {
+    Handle related field changes and data loading
+    useEffect(() => {
     const fetchRelatedData = async () => {
         if (view === true) {
             if (values.related === "Contact" && contactdata.length <= 0) {
@@ -132,22 +132,22 @@ useEffect(() => {
     };
 
     fetchRelatedData();
-}, [values.related, view, user.role, user._id, contactList, leadData]);
+  }, [values.related, view, user.role, user._id, contactList, leadData]);
 
-// Second useEffect - Handle data fetching for edit mode
-useEffect(() => {
-    if (props.id) {
-        fetchAllData();
-    } else if (props.data) {
-        setFieldValue('agenda', props.data?.agenda);
-        setFieldValue('attendes', props.data?.attendes);
-        setFieldValue('attendesLead', props.data?.attendesLead);
-        setFieldValue('location', props.data?.location);
-        setFieldValue('related', props.data?.related);
-        setFieldValue('dateTime', props.data?.dateTime);
-        setFieldValue('notes', props.data?.notes);
-        setFieldValue('createBy', props.data?.createBy);
-    }
-}, [props.id, props.data]);
+  // Second useEffect - Handle data fetching for edit mode
+  useEffect(() => {
+      if (props.id) {
+          fetchAllData();
+      } else if (props.data) {
+          setFieldValue('agenda', props.data?.agenda);
+          setFieldValue('attendes', props.data?.attendes);
+          setFieldValue('attendesLead', props.data?.attendesLead);
+          setFieldValue('location', props.data?.location);
+          setFieldValue('related', props.data?.related);
+          setFieldValue('dateTime', props.data?.dateTime);
+          setFieldValue('notes', props.data?.notes);
+          setFieldValue('createBy', props.data?.createBy);
+      }
+  }, [props.id, props.data]);
   ```
     
