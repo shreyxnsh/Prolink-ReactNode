@@ -106,7 +106,7 @@ PUBLIC_URL="http://localhost:3000/"
         }
     };
 
-    Handle related field changes and data loading
+    // Handle related field changes and data loading
     useEffect(() => {
     const fetchRelatedData = async () => {
         if (view === true) {
